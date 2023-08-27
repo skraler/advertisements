@@ -4,6 +4,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .forms import ExtendedUserCreationForm
 
+@login_required(login_url= reverse_lazy('login'))
 def advertisement_post(request):
     return render(request, 'app_advertisements/advertisement_post.html')
 
